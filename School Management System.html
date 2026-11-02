@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about our school, explore our courses, and find information for students and families.">
+    <title>School Management System | Welcome</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --navy: #18324b;
+            --blue: #2563a6;
+            --gold: #f2b84b;
+            --cream: #fffaf0;
+            --ink: #263545;
+            --muted: #627181;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 85px;
+        }
+
+        body {
+            margin: 0;
+            color: var(--ink);
+            background: var(--cream);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: var(--white);
+            box-shadow: 0 2px 12px rgb(24 50 75 / 10%);
+        }
+
+        .header-inner {
+            width: min(1100px, 92%);
+            min-height: 76px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--navy);
+            font-size: 1.05rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .brand-mark {
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            background: var(--gold);
+            font-size: 1.3rem;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 8px;
+        }
+
+        nav a {
+            padding: 9px 12px;
+            border-radius: 8px;
+            color: var(--navy);
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        nav a:hover,
+        nav a:focus-visible {
+            background: #edf4fb;
+            outline: none;
+        }
+
+        .hero {
+            padding: 92px 20px;
+            color: var(--white);
+            text-align: center;
+            background: linear-gradient(135deg, #18324b, #2563a6);
+        }
+
+        .hero-content {
+            width: min(760px, 100%);
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            margin: 0 0 12px;
+            color: var(--gold);
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin-top: 0;
+        }
+
+        .hero h1 {
+            margin-bottom: 16px;
+            font-size: clamp(2.2rem, 6vw, 3.8rem);
+            line-height: 1.1;
+        }
+
+        .hero p:not(.eyebrow) {
+            max-width: 620px;
+            margin: 0 auto 28px;
+            color: #e7eef6;
+            font-size: 1.1rem;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 20px;
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            color: var(--navy);
+            background: var(--gold);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .button:hover,
+        .button:focus-visible {
+            border-color: var(--white);
+            background: var(--white);
+            outline: none;
+        }
+
+        .section {
+            width: min(1100px, 92%);
+            margin: 0 auto;
+            padding: 72px 0;
+        }
+
+        .section-heading {
+            max-width: 680px;
+            margin: 0 auto 34px;
+            text-align: center;
+        }
+
+        .section-heading h2 {
+            margin-bottom: 10px;
+            color: var(--navy);
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+        }
+
+        .section-heading p {
+            margin-bottom: 0;
+            color: var(--muted);
+        }
+
+        .about-panel {
+            padding: 32px;
+            border-left: 5px solid var(--gold);
+            border-radius: 12px;
+            background: var(--white);
+            box-shadow: 0 8px 26px rgb(24 50 75 / 7%);
+        }
+
+        .about-panel h3 {
+            margin-bottom: 8px;
+            color: var(--navy);
+        }
+
+        .about-panel p:last-child {
+            margin-bottom: 0;
+        }
+
+        .services-section {
+            width: 100%;
+            background: #edf4fb;
+        }
+
+        .services-section .section {
+            padding-top: 72px;
+            padding-bottom: 72px;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .service-card {
+            padding: 24px;
+            border-radius: 12px;
+            background: var(--white);
+            box-shadow: 0 6px 20px rgb(24 50 75 / 6%);
+        }
+
+        .service-icon {
+            width: 46px;
+            height: 46px;
+            margin-bottom: 14px;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            background: #fff1cf;
+            font-size: 1.4rem;
+        }
+
+        .service-card h3 {
+            margin-bottom: 8px;
+            color: var(--navy);
+            font-size: 1.1rem;
+        }
+
+        .service-card p {
+            margin-bottom: 0;
+            color: var(--muted);
+        }
+
+        .contact-panel {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            align-items: start;
+            padding: 30px;
+            border-radius: 12px;
+            color: var(--white);
+            background: var(--navy);
+        }
+
+        .contact-panel h3 {
+            margin-bottom: 8px;
+            color: var(--gold);
+        }
+
+        .contact-panel p {
+            margin-bottom: 0;
+            color: #e7eef6;
+        }
+
+        .contact-note {
+            padding: 18px;
+            border: 1px solid rgb(255 255 255 / 24%);
+            border-radius: 8px;
+        }
+
+        footer {
+            padding: 22px 4%;
+            color: #e7eef6;
+            background: #102538;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 700px) {
+            .header-inner {
+                padding: 12px 0;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            nav a {
+                padding: 8px 9px;
+                font-size: 0.88rem;
+            }
+
+            .hero {
+                padding: 70px 20px;
+            }
+
+            .service-grid,
+            .contact-panel {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 54px 0;
+            }
+
+            .services-section .section {
+                padding-top: 54px;
+                padding-bottom: 54px;
+            }
+
+            .about-panel,
+            .contact-panel {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="#home" aria-label="School home">
+                <span class="brand-mark" aria-hidden="true">S</span>
+                <span>Our School</span>
+            </a>
+            <nav aria-label="Main navigation">
+                <a href="#home">Home</a>
+                <a href="#about us.html">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#contact us.html">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <p class="eyebrow">Learn today. Build tomorrow.</p>
+                <h1>Welcome to Our School</h1>
+                <p>We help students learn useful skills, grow in confidence, and prepare for their future careers.</p>
+                <a class="button" href="#services">Explore our courses</a>
+            </div>
+        </section>
+
+        <section class="section" id="about">
+            <div class="section-heading">
+                <p class="eyebrow">About us</p>
+                <h2>A place to learn and grow</h2>
+                <p>We make learning practical, welcoming, and focused on helping every student move forward.</p>
+            </div>
+            <div class="about-panel">
+                <h3>What we do</h3>
+                <p>Our school offers courses that connect classroom learning with real-world skills. Students can explore their interests, learn from supportive teachers, and prepare for work or further study.</p>
+                <p>We believe a good education gives every student the knowledge and confidence to reach their goals.</p>
+            </div>
+        </section>
+
+        <section class="services-section" id="services">
+            <div class="section">
+                <div class="section-heading">
+                    <p class="eyebrow">Our services</p>
+                    <h2>Courses for your future</h2>
+                    <p>Choose an area that interests you and start building practical skills.</p>
+                </div>
+                <div class="service-grid">
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">💻</div>
+                        <h3>Software Development</h3>
+                        <p>Learn how to create websites, apps, and computer programs.</p>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">🔌</div>
+                        <h3>Electronics and Telecommunications</h3>
+                        <p>Explore electronics, communication systems, and practical technology.</p>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">🌍</div>
+                        <h3>Tourism</h3>
+                        <p>Build skills in travel, hospitality, and helping visitors.</p>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">🖥️</div>
+                        <h3>Information and Communication Technology</h3>
+                        <p>Develop everyday computer and digital communication skills.</p>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">📊</div>
+                        <h3>Accounting</h3>
+                        <p>Learn how to record, organize, and understand financial information.</p>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">🚗</div>
+                        <h3>Automobile</h3>
+                        <p>Discover vehicle systems, maintenance, and repair basics.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="section-heading">
+                <p class="eyebrow">Contact us</p>
+                <h2>We are happy to help</h2>
+                <p>Have a question about a course or joining the school? Get in touch with the school office.</p>
+            </div>
+            <div class="contact-panel">
+                <div>
+                    <h3>School Office</h3>
+                    <p>For course information, admissions, and other questions, please contact or visit your school office.</p>
+                </div>
+                <div class="contact-note">
+                    <h3>School contact details</h3>
+                    <p>Add your school's phone number, email address, and location here so families know how to reach you.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Our School. Learning for a brighter future.</p>
+    </footer>
+</body>
+</html>

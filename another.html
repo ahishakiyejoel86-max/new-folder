@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+</head>
+<body>
+     <label for="num1">Enter First Number:</label>
+    <input type="number" id="num1" required>
+<br>
+<br>
+    <label for="num2">Enter Second Number:</label>
+    <input type="number" id="num2">
+    <br>
+    <br>
+    <button onclick="addNumbers()">Add</button>
+    <br>
+    <button onclick="subNumbers()">Sub</button>
+    <br>
+    <center>
+        <label for="result">Answer:</label>
+        <input type="text" readonly id="result">
+    </center>
+    <script>
+        function addNumbers() {
+
+            var n1 = Number(document.getElementById("num1").value);
+
+            var n2 = Number(document.getElementById("num2").value);
+
+            var sum = n1 + n2;
+
+            document.getElementById("result").value = sum;
+
+        }
+        function subNumbers () {
+
+            var n1 = Number(document.getElementById("num1").value);
+
+            var n2 = Number(document.getElementById("num2").value);
+
+            var sub = n1 - n2;
+
+            document.getElementById("result").value = sub;
+        }
+    </script>
+</body>
+</html>
